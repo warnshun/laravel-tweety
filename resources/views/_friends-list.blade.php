@@ -1,17 +1,19 @@
-<h3 class="font-bold text-xl mb-4">好友</h3>
+<div class="bg-gray-200 rounded-lg px-6 py-4">
+   <h3 class="font-bold text-xl mb-4">追蹤中</h3>
 
-<ul>
-    @foreach (range(1, 8) as $index)
-    <li class="mb-4">
-        <div class="flex items-center text-sm">
-            <img
-                src="https://i.pravatar.cc/40"
-                alt=""
-                class="rounded-full mr-2"
-            >
+    <ul>
+        @foreach (auth()->user()->follows as $user)
+        <li class="mb-4">
+            <div class="flex items-center text-sm">
+                <img
+                    src="{{ $user->avatar }}"
+                    alt=""
+                    class="rounded-full mr-2"
+                >
 
-            John Doe
-        </div>
-    </li>
-    @endforeach
-</ul>
+                {{ $user->name }}
+            </div>
+        </li>
+        @endforeach
+    </ul>
+</div>
