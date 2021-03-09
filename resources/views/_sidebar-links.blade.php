@@ -1,34 +1,34 @@
 <ul>
     <li><a
             class="font-bold text-lg mb-4 block"
-            href="/"
-            >Home</a></li>
+            href="{{ route('home') }}"
+            >主頁</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="/#"
-            >Explore</a></li>
+            >探索</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="#"
-            >Notifications</a></li>
+            >通知</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="#"
-            >Messages</a></li>
+            >訊息</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="#"
-            >BookMarks</a></li>
+            >書籤</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="#"
-            >Lists</a></li>
+            >列表</a></li>
+    <li><a
+            class="font-bold text-lg mb-4 block"
+            href="{{ route('profile', auth()->user()->name) }}"
+            >個人資料</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
             href="#"
-            >Profile</a></li>
-    <li><a
-            class="font-bold text-lg mb-4 block"
-            href="#"
-            >More</a></li>
+            >更多</a></li>
 </ul>

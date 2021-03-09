@@ -24,17 +24,37 @@
         <section class="px-8 py-4 mb-6">
             <header class="container mx-auto">
                 <h1>
-                    <img src="/images/logo.jpg"
-                    alt="Tweety"
-                    width="60px"
-                    >
+                    <a href="{{ route('home') }}">
+                        <img
+                            src="/images/logo.jpg"
+                            alt="Tweety"
+                            width="60px"
+                        >
+                    </a>
                 </h1>
             </header>
         </section>
 
         <section class="px-8">
             <main class="container mx-auto">
-                @yield('content')
+                <div class="lg:flex lg:justify-between">
+                    @if (auth()->check())
+                        <div class="lg:w-32">
+                            @include('_sidebar-links')
+                        </div>
+                    @endif
+
+
+                    <div class="flex-1 lg:mx-10" style="max-width: 700px">
+                        @yield('content')
+                    </div>
+
+                    @if (auth()->check())
+                        <div class="lg:w-1/6">
+                            @include('_friends-list')
+                        </div>
+                    @endif
+                </div>
             </main>
         </section>
     </div>
