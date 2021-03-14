@@ -4,4 +4,6 @@
     @empty
         <p class="p-4">目前未有貼文</p>
     @endforelse
+
+    {{ $tweets->links() }}
 </div>

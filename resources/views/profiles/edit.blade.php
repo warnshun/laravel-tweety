@@ -9,7 +9,7 @@
                 名稱
             </label>
 
-            <input class="border border-gray-400 p-2 w-full"
+            <input class="border border-gray-400 p-2 w-full rounded"
                 type="text"
                 name="name"
                 id="name"
@@ -27,7 +27,7 @@
                 用戶名
             </label>
 
-            <input class="border border-gray-400 p-2 w-full"
+            <input class="border border-gray-400 p-2 w-full rounded"
                 type="text"
                 name="username"
                 id="username"
@@ -48,7 +48,7 @@
 
             <div class="flex">
 
-                <input class="border border-gray-400 p-2 w-full"
+                <input class="border border-gray-400 p-2 w-full rounded"
                     type="file"
                     name="avatar"
                     id="avatar"
@@ -57,7 +57,8 @@
                 <img
                     src="{{ $user->avatar }}"
                     alt="your avatar"
-                    width="40"
+                    width="100"
+                    class="rounded-lg"
                 >
             </div>
 
@@ -72,7 +73,7 @@
                 E-Mail
             </label>
 
-            <input class="border border-gray-400 p-2 w-full"
+            <input class="border border-gray-400 p-2 w-full rounded"
                 type="email"
                 name="email"
                 id="email"
@@ -90,7 +91,7 @@
                 密碼
             </label>
 
-            <input class="border border-gray-400 p-2 w-full"
+            <input class="border border-gray-400 p-2 w-full rounded"
                 type="password"
                 name="password"
                 id="password"
@@ -107,7 +108,7 @@
                 密碼確認
             </label>
 
-            <input class="border border-gray-400 p-2 w-full"
+            <input class="border border-gray-400 p-2 w-full rounded"
                 type="password"
                 name="password_confirmation"
                 id="password_confirmation"
@@ -120,10 +121,12 @@
 
         <div class="mb-6">
             <button type="submit"
-                class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500"
+                class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500 mr-4"
             >
                 送出
             </button>
+
+            <a href="{{ $user->path() }}" class="hover:underline">取消</a>
         </div>
 
     </form>

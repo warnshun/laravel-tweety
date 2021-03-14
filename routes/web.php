@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::middleware('auth')->group(function () {
     Route::get('/tweets', 'TweetController@index')->name('home');
@@ -26,7 +27,7 @@ Route::middleware('auth')->group(function () {
 
     Route::patch('/profiles/{user:username}', 'ProfilesController@update')->middleware('can:edit,user');
 
-    Route::get('/explore', 'ExploreController@index')->name('explore');
+    Route::get('/explore', 'ExploreController')->name('explore');
 });
 
 Route::get('/profiles/{user:username}', 'ProfilesController@show')->name('profile');

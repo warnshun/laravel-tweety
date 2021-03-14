@@ -1,9 +1,9 @@
-<div class="bg-gray-200 rounded-lg px-6 py-4">
+<div class="bg-gray-200 border border-gray-300 rounded-lg px-6 py-4">
     <h3 class="font-bold text-xl mb-4">追蹤中</h3>
 
     <ul>
         @forelse (auth()->user()->follows as $user)
-            <li class="mb-4">
+            <li class="{{ $loop->last ? '' : 'mb-4' }}">
                 <div>
                     <a href="{{ $user->path() }} "
                         class="flex items-center text-sm">
