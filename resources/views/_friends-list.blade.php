@@ -2,10 +2,10 @@
     <h3 class="font-bold text-xl mb-4">追蹤中</h3>
 
     <ul>
-        @foreach (auth()->user()->follows as $user)
+        @forelse (auth()->user()->follows as $user)
             <li class="mb-4">
                 <div>
-                    <a href="{{ route('profile', $user->name) }} "
+                    <a href="{{ $user->path() }} "
                         class="flex items-center text-sm">
                         <img src="{{ $user->avatar }}"
                             alt=""
@@ -17,6 +17,8 @@
                     </a>
                 </div>
             </li>
-        @endforeach
+        @empty
+            <li>未有追隨</li>
+        @endforelse
     </ul>
 </div>

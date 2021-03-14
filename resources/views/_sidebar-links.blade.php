@@ -5,7 +5,7 @@
             >主頁</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
-            href="/#"
+            href="/explore"
             >探索</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
@@ -25,7 +25,7 @@
             >列表</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
-            href="{{ route('profile', auth()->user()->name) }}"
+            href="{{ route('profile', current_user()) }}"
             >個人資料</a></li>
     <li><a
             class="font-bold text-lg mb-4 block"
