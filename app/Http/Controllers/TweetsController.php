@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Tweet;
-use Illuminate\Http\Request;
 
-class TweetController extends Controller
+class TweetsController extends Controller
 {
     public function index()
     {
